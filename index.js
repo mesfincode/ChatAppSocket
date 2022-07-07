@@ -3,7 +3,12 @@ const port = process.env.PORT || 8900
 const io = require("socket.io")(port,{
     cors:{
         origin: "https://hahu-chat-app.web.app/" // specifies the port where clint request comes in
+   
     },
+    headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
+      }
 });
 
 let users = [];
