@@ -3,7 +3,10 @@ const port = process.env.PORT || 8900
 const io = require("socket.io")(port,{
     cors:{
         //origin: "http://localhost:3000"
-       origin: "https://hahu-chat-app.web.app/" // specifies the port where clint request comes in
+       //origin: "", // specifies the port where clint request comes in,
+       headers: {
+        "Access-Control-Allow-Origin": "*",
+      }
     },
 });
 
