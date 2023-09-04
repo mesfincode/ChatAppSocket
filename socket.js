@@ -15,6 +15,7 @@ const io = require("socket.io")(port,{
 });
 
 var users = [];
+
 const addUser = (userId, socketId)=>{
     !users.some((user)=> user.userId === userId)&& users.push({userId, socketId});
    console.log(users);
